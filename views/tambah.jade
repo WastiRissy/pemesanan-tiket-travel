@@ -1,0 +1,47 @@
+doctype html
+html(lang="en")
+	head
+		title Daftar Tiket
+		link(rel="stylesheet", href="/css/bootstrap.min.css")
+		script(src="/js/jquery.min.js")
+		script(src="/js/bootstrap.min.js")
+		script(src="/js/listener.js")
+		script $(document).ready(function(){listen();});
+	body
+		div.row
+			div.col-md-8.col-md-offset-2
+				div.panel.panel-default
+					div.panel-body
+						form(method="post", action="http://localhost:3000/pesan").form-horizontal
+							div.form-group
+								label(for="kd_pesan").col-md-2 Kode Pesan
+								div.col-md-4
+									input(type="text",id="kd_pesan", name="kd_pesan").form-control
+							div.form-group
+								label(for="tanggal").col-md-2 Tanggal
+								div.col-md-4
+									input(type="text", id="tanggal", name="tanggal").form-control
+							div.form-group
+								label(for="maskapai").col-md-2 Maskapai
+								div.col-md-5
+									select(name='maskapai').form-control
+										option(value="Batik Air") Batik Air
+										option(value="Citilink") Citilink
+										option(value="Garuda Indonesia") Garuda Indonesia
+										option(value="Lion Air") Lion Air
+										option(value="Wings Air") Wings Air
+							div.form-group
+								label(for="email").col-md-2 Email
+								div.col-md-4
+									input(type="text", id="email", name="email").form-control
+							div.form-group
+								label(for="telp").col-md-2 Telepon
+								div.col-md-4
+									input(type="text", id="telp", name="telp").form-control
+							div.form-group
+								div.col-md-3.col-md-offset-2
+									a(role='button', id='btnTambah').form-control.form.btn.btn-primary Tambah Tiket
+							div(id='form-tiket')
+							div.form-group
+								div.col-md-3.col-md-offset-2
+									button(id='btn-save', style='display:none', type='submit').form-control.form.btn.btn-success Simpan

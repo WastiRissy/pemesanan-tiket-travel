@@ -1,0 +1,29 @@
+doctype html
+html(lang="en")
+	head
+		title Daftar Tiket
+		link(rel="stylesheet", href="/css/bootstrap.min.css")
+		script(src="/js/bootstrap.min.js")
+	body
+		div.row
+			div.col-md-8.col-md-offset-2
+				div.panel.panel-default
+					div.panel-body
+						table.table.table-striped.table-bordered.table-responsive
+							thead
+								tr
+									th Kode tiket
+									th Nama Penumpang
+									th Dari
+									th Tujuan
+									th Waktu Keberangkatan
+									th Waktu Tiba
+							tbody
+								each val, index in objects.tiket.kd_tiket
+									tr
+										td #{objects.tiket.kd_tiket[index]}
+										td #{objects.tiket.nama_penumpang[index]}
+										td #{objects.tiket.dari[index]}
+										td #{objects.tiket.ke[index]}
+										td #{objects.tiket.waktu_keberangkatan[index]}
+										td #{objects.tiket.waktu_tiba[index]}

@@ -1,0 +1,33 @@
+doctype html
+html(lang="en")
+	head
+		title Daftar #{ucfirst(collection)}
+		link(rel="stylesheet", href="/css/bootstrap.min.css")
+		style .btn {margin:0 10px 0 0;}
+		script(src="/js/bootstrap.min.js")
+	body
+		div.row
+			div.col-md-10.col-md-offset-1
+				div.panel.panel-default
+					div.panel-body
+						table.table.table-striped.table-bordered.table-responsive
+							thead
+								tr
+									th Kode Pemesanan
+									th Tanggal
+									th Maskapai
+									th Email
+									th Telepon
+									th Keterangan
+							tbody
+								each obj, index in objects
+									tr
+										td #{obj.kd_pesan}
+										td #{obj.tanggal}
+										td #{obj.maskapai}
+										td #{obj.email}
+										td #{obj.telp}
+										td
+											a(role="button", href="/pesan/#{obj._id}").btn.btn-primary Detail
+											a(role="button", href="/pesan/delete/#{obj._id}").btn.btn-danger Hapus
+											a(role="button", href="/pesan/edit/#{obj._id}").btn.btn-warning Edit
